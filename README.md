@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# A4 Technologies Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the official marketing website for **A4 Technologies**, a software development agency that builds high-performance websites, web applications, internal tools, MVPs, and provides optimization and bug-fixing services.
 
-Currently, two official plugins are available:
+The project is built with **Vite, React, TypeScript, Tailwind CSS, and shadcn/ui**, focusing on performance, scalability, accessibility, and SEO.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React 18 + TypeScript  
+- **Build Tool:** Vite (Rollup under the hood)  
+- **Styling:** Tailwind CSS + tailwindcss-animate  
+- **UI Components:** shadcn/ui + Radix UI  
+- **Routing:** React Router DOM  
+- **Forms & Validation:** React Hook Form + Zod  
+- **State & Data Fetching:** TanStack React Query  
+- **Animations:** GSAP  
+- **Charts:** Recharts  
+- **Icons:** Lucide React  
+- **Testing:** Vitest + Testing Library  
+- **Linting:** ESLint  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```txt
+src/
+├── assets/          # Images, icons, static assets
+├── components/      # Reusable UI components
+├── pages/           # Route-level pages
+├── layouts/         # Layout wrappers
+├── hooks/           # Custom React hooks
+├── lib/             # Utilities and helpers
+├── styles/          # Global styles
+├── App.tsx          # App entry with routes
+└── main.tsx         # Vite entry point
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🧑‍💻 Getting Started
+Prerequisites
+Node.js v18+
+npm or pnpm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Install dependencies
+npm install
+Start development server
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+App runs at:
+👉 http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🏗 Build for Production
+npm run build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Preview production build locally:
+npm run preview
+
+🧪 Testing
+Run all tests:
+npm run test
+
+Watch mode:
+npm run test:watch
+
+🧹 Linting
+npm run lint
+
+🎨 UI & Design System
+Built with shadcn/ui and Radix UI for accessibility
+Tailwind CSS for utility-first styling
+Design tokens aligned with A4 Technologies brand:
+Dark background
+Green primary accent
+High-contrast, readable typography
+Fully responsive and mobile-first
+
+🔍 SEO & Performance
+Semantic HTML structure
+Optimized bundle size via Vite + Rollup
+Accessible components (ARIA via Radix)
+SEO-ready page structure for marketing and blog content
