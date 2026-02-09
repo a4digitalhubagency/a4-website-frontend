@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/A4_technologis_2-removebg-preview.png";
 
 const navLinks = [
     { href: "/", label: "Home" },
@@ -28,7 +28,7 @@ const Navbar = () => {
                         <img
                             src={logo}
                             alt="A4 Technologies Logo"
-                            className="h-10 md:h-12 w-auto transition-transform group-hover:scale-110"
+                            className="h-12 md:h-12 w-auto transition-transform group-hover:scale-110"
                         />
                     </Link>
 
@@ -40,8 +40,8 @@ const Navbar = () => {
                                     variant={isActive(link.href) ? "ghost" : "ghost"}
                                     size="sm"
                                     className={`transition-all ${isActive(link.href)
-                                            ? "text-blue-600 bg-blue-50/50 border-b-2 border-blue-600"
-                                            : "text-slate-600 hover:text-slate-900"
+                                        ? "text-blue-600 bg-blue-50/50 border-b-2 border-blue-600"
+                                        : "text-slate-600 hover:text-slate-900"
                                         }`}
                                 >
                                     {link.label}
@@ -84,8 +84,8 @@ const Navbar = () => {
                                         variant="ghost"
                                         size="sm"
                                         className={`w-full justify-start transition-all ${isActive(link.href)
-                                                ? "text-blue-600 bg-blue-50/50 font-semibold"
-                                                : "text-slate-700"
+                                            ? "text-blue-600 bg-blue-50/50 font-semibold"
+                                            : "text-slate-700"
                                             }`}
                                     >
                                         {link.label}
