@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Twitter, Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/images/logo.png";
 
 const Footer = () => {
@@ -40,25 +40,31 @@ const Footer = () => {
                         </p>
                         <div className="flex gap-3">
                             <a
-                                href="#"
+                                href="https://x.com/A4digitalHub"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-600 hover:bg-blue-50 transition-all"
-                                aria-label="LinkedIn"
-                            >
-                                <Linkedin size={18} />
-                            </a>
-                            <a
-                                href="#"
-                                className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-600 hover:bg-blue-50 transition-all"
-                                aria-label="Twitter"
+                                aria-label="X"
                             >
                                 <Twitter size={18} />
                             </a>
                             <a
-                                href="#"
-                                className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-600 hover:bg-blue-50 transition-all"
-                                aria-label="GitHub"
+                                href="https://www.instagram.com/a4technologies_?igsh=OHd2cWVib3h2YnVk&utm_source=qr"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-pink-500 hover:border-pink-500 hover:bg-pink-50 transition-all"
+                                aria-label="Instagram"
                             >
-                                <Github size={18} />
+                                <Instagram size={18} />
+                            </a>
+                            <a
+                                href="https://wa.me/2348124849188"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-green-600 hover:border-green-600 hover:bg-green-50 transition-all"
+                                aria-label="WhatsApp"
+                            >
+                                <MessageCircle size={18} />
                             </a>
                         </div>
                     </div>
@@ -104,25 +110,25 @@ const Footer = () => {
                             <li className="flex items-start gap-3">
                                 <Mail size={18} className="text-blue-600 mt-0.5 shrink-0" />
                                 <a
-                                    href="mailto:hello@a4technologies.com"
+                                    href="mailto:a4digitalhubagency1@gmail.com"
                                     className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
                                 >
-                                    hello@a4technologies.com
+                                    a4digitalhubagency1@gmail.com
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone size={18} className="text-blue-600 mt-0.5 shrink-0" />
                                 <a
-                                    href="tel:+1234567890"
+                                    href="https://wa.me/2348124849188"
                                     className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
                                 >
-                                    +1 (234) 567-890
+                                    +234 812 484 9188
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin size={18} className="text-blue-600 mt-0.5 shrink-0" />
                                 <span className="text-sm text-slate-600">
-                                    San Francisco, CA
+                                    Lagos, Nigeria
                                 </span>
                             </li>
                         </ul>
