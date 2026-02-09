@@ -39,6 +39,7 @@ const Footer = () => {
                             Building exceptional digital experiences for startups, businesses, and organizations worldwide.
                         </p>
                         <div className="flex gap-3">
+                            {/* X */}
                             <a
                                 href="https://x.com/A4digitalHub"
                                 target="_blank"
@@ -48,6 +49,7 @@ const Footer = () => {
                             >
                                 <Twitter size={18} />
                             </a>
+                            {/* Instagram */}
                             <a
                                 href="https://www.instagram.com/a4technologies_?igsh=OHd2cWVib3h2YnVk&utm_source=qr"
                                 target="_blank"
@@ -57,6 +59,7 @@ const Footer = () => {
                             >
                                 <Instagram size={18} />
                             </a>
+                            {/* WhatsApp */}
                             <a
                                 href="https://wa.me/2348124849188"
                                 target="_blank"
@@ -65,6 +68,16 @@ const Footer = () => {
                                 aria-label="WhatsApp"
                             >
                                 <MessageCircle size={18} />
+                            </a>
+                            {/* LinkedIn */}
+                            <a
+                                href="https://www.linkedin.com/in/saheed-undefined-7548273a7/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-700 hover:border-blue-700 hover:bg-blue-50 transition-all"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin size={18} />
                             </a>
                         </div>
                     </div>
