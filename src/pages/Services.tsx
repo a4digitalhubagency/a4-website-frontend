@@ -18,7 +18,102 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-    // your services array stays the same
+    {
+        id: "web-development",
+        icon: Globe,
+        title: "Web Development",
+        subtitle: "Custom Websites That Convert",
+        description:
+            "We create stunning, high-performance websites tailored to your brand. From landing pages to complex multi-page sites, our web development services focus on speed, SEO, and conversion optimization.",
+        features: [
+            "Responsive design for all devices",
+            "SEO-optimized structure and content",
+            "Fast loading speeds (Core Web Vitals)",
+            "CMS integration (WordPress, Headless)",
+            "E-commerce functionality",
+            "Analytics and tracking setup",
+        ],
+    },
+    {
+        id: "web-apps",
+        icon: Layers,
+        title: "Web Application Development",
+        subtitle: "Scalable Solutions for Complex Needs",
+        description:
+            "Our web app development services deliver powerful, scalable applications that handle complex business logic. We build everything from dashboards to SaaS platforms using modern frameworks and best practices.",
+        features: [
+            "Custom dashboard development",
+            "SaaS platform development",
+            "Real-time features and APIs",
+            "Database design and optimization",
+            "Third-party integrations",
+            "Security best practices",
+        ],
+    },
+    {
+        id: "mvp",
+        icon: Rocket,
+        title: "MVP Development for Startups",
+        subtitle: "Validate Ideas Quickly",
+        description:
+            "Launch your startup faster with our MVP development services. We help founders build lean, focused products that validate assumptions and attract early users without over-engineering.",
+        features: [
+            "Rapid prototyping (4-8 weeks)",
+            "User-centered design",
+            "Core feature prioritization",
+            "Scalable architecture",
+            "Investor-ready presentations",
+            "Iteration support",
+        ],
+    },
+    {
+        id: "internal-tools",
+        icon: Settings,
+        title: "Internal Tools for Businesses",
+        subtitle: "Automate and Streamline Operations",
+        description:
+            "Boost productivity with custom internal tools designed for your workflows. We build admin panels, CRMs, inventory systems, and automation tools that save time and reduce errors.",
+        features: [
+            "Custom admin dashboards",
+            "Workflow automation",
+            "Data management systems",
+            "Reporting and analytics",
+            "Integration with existing tools",
+            "Role-based access control",
+        ],
+    },
+    {
+        id: "bug-fixes",
+        icon: Bug,
+        title: "Bug Fixes & Maintenance",
+        subtitle: "Keep Your Software Running Smoothly",
+        description:
+            "Struggling with bugs, crashes, or performance issues? Our expert team diagnoses and resolves problems quickly, ensuring your software operates reliably and efficiently.",
+        features: [
+            "Rapid issue diagnosis",
+            "Critical bug resolution",
+            "Performance troubleshooting",
+            "Code review and cleanup",
+            "Security vulnerability fixes",
+            "Ongoing maintenance plans",
+        ],
+    },
+    {
+        id: "optimization",
+        icon: Zap,
+        title: "Website Optimization Services",
+        subtitle: "Faster, Better, Stronger",
+        description:
+            "Improve your website's performance, SEO rankings, and user experience. Our optimization services analyze your current setup and implement proven strategies for measurable improvements.",
+        features: [
+            "Page speed optimization",
+            "Core Web Vitals improvement",
+            "SEO technical audit",
+            "Mobile optimization",
+            "Conversion rate optimization",
+            "Accessibility improvements",
+        ],
+    },
 ];
 
 const Services = () => {

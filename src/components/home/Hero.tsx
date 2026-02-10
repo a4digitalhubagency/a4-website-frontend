@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const Hero = () => {
     const heroRef = useRef<HTMLElement>(null);
-    const headlineRef = useRef<HTMLHeadingElement>(null);
+    // const headlineRef = useRef<HTMLHeadingElement>(null);
     const subheadRef = useRef<HTMLParagraphElement>(null);
     const badgeRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
