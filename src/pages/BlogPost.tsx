@@ -35,7 +35,7 @@ const BlogPost = () => {
   return (
     <Layout>
       {/* Hero Section with Image Placeholder */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-br from-white via-blue-50/30 to-white">
+      <section className="pt-16 pb-12 md:pt-20 md:pb-16 bg-gradient-to-br from-white via-blue-50/30 to-white">
         <div className="container mx-auto px-4 md:px-6">
           {/* Back Button */}
           <Link to="/blog">
@@ -107,11 +107,15 @@ const BlogPost = () => {
               prose-headings:font-bold prose-headings:text-foreground prose-headings:tracking-tight
               prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
               prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-8 prose-h3:mb-4
+              prose-h4:text-lg prose-h4:font-bold prose-h4:text-slate-900 prose-h4:mt-0 prose-h4:mb-2
               prose-p:text-base prose-p:md:text-lg prose-p:leading-relaxed prose-p:text-slate-700 prose-p:mb-6
               prose-strong:text-foreground prose-strong:font-semibold
-              prose-ul:my-6 prose-ul:space-y-2
+              prose-ul:my-6 prose-ul:space-y-2 prose-ul:list-disc prose-ul:list-outside
               prose-li:text-base prose-li:md:text-lg prose-li:leading-relaxed prose-li:text-slate-700
-              prose-a:text-primary prose-a:no-underline prose-a:font-medium hover:prose-a:underline"
+              prose-a:text-primary prose-a:no-underline prose-a:font-medium hover:prose-a:underline
+              prose-code:text-sm prose-code:bg-slate-900 prose-code:text-slate-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+              prose-pre:bg-slate-900 prose-pre:text-slate-100
+              prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:italic"
             dangerouslySetInnerHTML={{ __html: post.content || '<p>Content coming soon...</p>' }}
           />
 
