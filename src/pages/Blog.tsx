@@ -16,7 +16,7 @@ const blogPosts = [
     readTime: "6 mins",
     date: "2026-02-10",
     excerpt: "An MVP is the simplest version of your product that solves a core problem and can be released to real users.",
-    content: "...",
+    content: "LoremWe're a Lagos-based technology studio crafting exceptional web and mobile solutions for ambitious businesses worldwide",
     seo: {
       metaTitle: "MVP Development Guide for Startups | A4 Technologies",
       metaDescription: "Learn what an MVP is, why startups need it, and how to build one effectively to validate your business idea."
