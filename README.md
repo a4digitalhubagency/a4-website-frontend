@@ -69,9 +69,6 @@ npm run lint
 🎨 UI & Design System
 Built with shadcn/ui and Radix UI for accessibility
 Tailwind CSS for utility-first styling
-Design tokens aligned with A4 Technologies brand:
-Dark background
-Green primary accent
 High-contrast, readable typography
 Fully responsive and mobile-first
 
