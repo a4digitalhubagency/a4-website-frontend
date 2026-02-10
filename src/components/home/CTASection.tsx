@@ -33,34 +33,44 @@ const CTASection = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="section-padding relative overflow-hidden bg-gradient-to-br from-primary via-blue-600 to-indigo-700">
+        <section
+            ref={sectionRef}
+            className="section-padding relative overflow-hidden bg-gradient-to-br from-primary via-blue-600 to-indigo-700"
+        >
             {/* Background Effects */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
-            <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:40px_40px]" />
+            <div className="absolute top-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-white/10 rounded-full blur-3xl" />
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div ref={contentRef} className="max-w-3xl mx-auto text-center opacity-0">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 mb-6">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+                <div
+                    ref={contentRef}
+                    className="max-w-3xl mx-auto text-center opacity-0"
+                >
+                    <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/20 border border-white/30 mb-4 sm:mb-6">
                         <Sparkles size={16} className="text-white" />
-                        <span className="text-sm font-medium text-white">
+                        <span className="text-xs sm:text-sm font-medium text-white">
                             Ready to Start?
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-balance">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
                         Let's Build Something{" "}
                         <span className="text-blue-200">Amazing Together</span>
                     </h2>
 
-                    <p className="text-lg text-blue-100 mb-10 max-w-2xl mx-auto">
+                    <p className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 sm:mb-10 max-w-xl sm:max-w-2xl mx-auto leading-relaxed">
                         Whether you need a website, web application, MVP, or optimization of
                         existing systems, our team is ready to help you achieve your goals.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                         <Link to="/contact">
-                            <Button variant="secondary" size="xl" className="group w-full sm:w-auto bg-white text-primary hover:bg-blue-50 font-semibold shadow-xl">
+                            <Button
+                                variant="secondary"
+                                size="xl"
+                                className="group w-full sm:w-auto bg-white text-primary hover:bg-blue-50 font-semibold shadow-xl"
+                            >
                                 Start Your Project
                                 <ArrowRight
                                     size={20}
@@ -69,7 +79,11 @@ const CTASection = () => {
                             </Button>
                         </Link>
                         <Link to="/contact">
-                            <Button variant="outline" size="xl" className="w-full sm:w-auto border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">
+                            <Button
+                                variant="outline"
+                                size="xl"
+                                className="w-full sm:w-auto border-2 border-white/40 text-white hover:bg-white/10 hover:border-white"
+                            >
                                 Schedule a Call
                             </Button>
                         </Link>

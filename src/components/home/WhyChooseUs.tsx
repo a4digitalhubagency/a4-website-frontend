@@ -104,24 +104,24 @@ const WhyChooseUs = () => {
                             reality. Our approach combines technical excellence with
                             business understanding to deliver solutions that truly matter.
                         </p>
-                        <div className="flex items-center gap-8">
-                            <div>
-                                <div className="text-4xl font-bold text-primary">50+</div>
-                                <div className="text-sm text-muted-foreground">
+                        <div className="flex flex-wrap items-center gap-6 md:gap-8">
+                            <div className="flex-1 min-w-[100px]">
+                                <div className="text-3xl md:text-4xl font-bold text-primary">50+</div>
+                                <div className="text-xs md:text-sm text-muted-foreground">
                                     Projects Delivered
                                 </div>
                             </div>
-                            <div className="w-px h-12 bg-border" />
-                            <div>
-                                <div className="text-4xl font-bold text-primary">98%</div>
-                                <div className="text-sm text-muted-foreground">
+                            <div className="w-px h-12 bg-border hidden sm:block" />
+                            <div className="flex-1 min-w-[100px]">
+                                <div className="text-3xl md:text-4xl font-bold text-primary">98%</div>
+                                <div className="text-xs md:text-sm text-muted-foreground">
                                     Client Satisfaction
                                 </div>
                             </div>
-                            <div className="w-px h-12 bg-border" />
-                            <div>
-                                <div className="text-4xl font-bold text-primary">24/7</div>
-                                <div className="text-sm text-muted-foreground">
+                            <div className="w-px h-12 bg-border hidden sm:block" />
+                            <div className="flex-1 min-w-[100px]">
+                                <div className="text-3xl md:text-4xl font-bold text-primary">24/7</div>
+                                <div className="text-xs md:text-sm text-muted-foreground">
                                     Support Available
                                 </div>
                             </div>
