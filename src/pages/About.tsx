@@ -173,7 +173,7 @@ const About = () => {
               {/* Badge */}
               <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-8">
                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-                <span className="text-sm font-medium text-blue-700">Established 2022</span>
+                <span className="text-sm font-medium text-blue-700">Established 2026</span>
               </div>
               
               {/* Main content */}
