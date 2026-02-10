@@ -125,7 +125,7 @@ const BlogPost = () => {
                 Let's discuss how we can help bring your ideas to life with expert development and design.
               </p>
               <Link to="/contact">
-                <Button size="lg" variant="default" className="font-semibold">
+                <Button size="lg" variant="hero" className="font-semibold">
                   Get Free Consultation
                 </Button>
               </Link>
