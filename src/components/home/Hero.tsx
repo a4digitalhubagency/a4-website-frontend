@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code2, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import gsap from "gsap";
 
 const Hero = () => {
@@ -131,7 +131,7 @@ const Hero = () => {
                         </Link>
                     </div>
 
-                    {/* Technologies */}
+                    {/* Technologies Marquee */}
                     <div
                         ref={techRef}
                         className="mt-8 sm:mt-12 md:mt-16 pt-4 sm:pt-8 md:pt-16 border-t border-slate-200 opacity-0"
@@ -139,18 +139,51 @@ const Hero = () => {
                         <p className="text-xs sm:text-sm md:text-base text-slate-500 mb-4 sm:mb-6 md:mb-8 font-semibold uppercase tracking-wider">
                             Technologies We Excel In
                         </p>
-                        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8">
-                            {["React", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Next.js"].map(
-                                (tech) => (
-                                    <div
-                                        key={tech}
-                                        className="flex items-center gap-1.5 sm:gap-2 text-slate-600 hover:text-blue-600 transition-colors group"
-                                    >
-                                        <Code2 size={16} className="group-hover:scale-110 transition-transform" />
-                                        <span className="font-medium text-xs sm:text-sm md:text-base">{tech}</span>
-                                    </div>
-                                )
-                            )}
+                        <div className="relative overflow-hidden">
+                            <div className="flex animate-marquee hover:pause-animation">
+                                {/* First set of logos */}
+                                <div className="flex items-center gap-8 sm:gap-12 md:gap-16 px-4 flex-shrink-0">
+                                    {/* React */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* Next.js */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* TypeScript */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* NestJS */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* MongoDB */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* Express */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity invert" />
+
+                                    {/* Supabase */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* Python */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+
+                                    {/* Node.js */}
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                </div>
+
+                                {/* Duplicate set for seamless loop */}
+                                <div className="flex items-center gap-8 sm:gap-12 md:gap-16 px-4 flex-shrink-0">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity invert" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
