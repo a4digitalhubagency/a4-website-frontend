@@ -24,6 +24,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 mins",
     date: "Feb 10, 2026",
     excerpt: "An MVP is the simplest version of your product that solves a core problem and can be released to real users.",
+    featuredImage: "/images/blog/guide to mvp development.webp",
     content: `
       <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
         <p class="text-lg font-semibold text-blue-900 mb-2">Key Insight</p>
@@ -190,6 +191,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 mins",
     date: "Feb 13, 2026",
     excerpt: "Compare React and Next.js to see which framework fits your project needs best.",
+    featuredImage: "/images/blog/daniel-korpai-pKRNxEguRgM-unsplash.webp",
     content: `
       <div class="bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-cyan-500 p-6 rounded-r-lg mb-8">
         <p class="text-lg font-semibold text-cyan-900 mb-2">Quick Answer</p>
@@ -381,6 +383,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "4 mins",
     date: "Feb 17, 2026",
     excerpt: "Boost website speed, SEO, and conversions with these 10 practical optimization techniques.",
+    featuredImage: "/images/blog/photo_4927075126814116965_y.webp",
     content: `
       <div class="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-8">
         <p class="text-lg font-semibold text-red-900 mb-2">Critical Stat</p>
