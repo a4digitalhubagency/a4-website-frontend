@@ -560,6 +560,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 mins",
     date: "Feb 20, 2026",
     excerpt: "Discover how automating repetitive tasks reduces costs, errors, and saves time.",
+    featuredImage: "/images/blog/photo_4929326926627802036_y.webp",
     content: `
       <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-8">
         <p class="text-lg font-semibold text-purple-900 mb-2">The Hidden Cost</p>
@@ -754,6 +755,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "4 mins",
     date: "Feb 24, 2026",
     excerpt: "Compare custom software and off-the-shelf tools to decide what works best for your business.",
+    featuredImage: "/images/blog/photo_4929326926627802039_y.webp",
     content: `
       <div class="bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mb-8">
         <p class="text-lg font-semibold text-indigo-900 mb-2">The Million-Dollar Question</p>
@@ -914,6 +916,7 @@ export const blogPosts: BlogPost[] = [
     author: "A4 Team",
     readTime: "7 min read",
     date: "Jan 5, 2024",
-    excerpt: "A comprehensive guide to evaluating software development agencies and finding the perfect partner for your business."
+    excerpt: "A comprehensive guide to evaluating software development agencies and finding the perfect partner for your business.",
+    featuredImage: "/images/blog/photo_4929326926627802044_y.webp"
   }
 ];
