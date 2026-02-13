@@ -8,12 +8,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { icon: Globe, title: "Web Development", description: "Custom websites built with modern technologies that load fast, rank well, and convert visitors into customers.", href: "/services#web-development" },
-  { icon: Layers, title: "Web Applications", description: "Scalable web app development services that handle complex business logic and deliver seamless user experiences.", href: "/services#web-apps" },
-  { icon: Rocket, title: "MVP Development", description: "MVP development for startups that helps you validate ideas quickly and get to market faster with lean, focused builds.", href: "/services#mvp" },
-  { icon: Settings, title: "Internal Tools", description: "Internal tools for businesses that automate workflows, boost productivity, and streamline operations.", href: "/services#internal-tools" },
-  { icon: Bug, title: "Bug Fixes", description: "Expert debugging and issue resolution to get your software running smoothly and reliably again.", href: "/services#bug-fixes" },
-  { icon: Zap, title: "Website Optimization", description: "Website optimization services that improve performance, SEO rankings, and user engagement metrics.", href: "/services#optimization" },
+  { icon: Globe, title: "Web Development", description: "Custom websites built with modern technologies that load fast, rank well, and convert visitors into customers.", href: "/services#web-development", bg:"bg-state-100/60 border-slate-200", },
+  { icon: Layers, title: "Web Applications", description: "Scalable web app development services that handle complex business logic and deliver seamless user experiences.", href: "/services#web-apps",bg:"bg-blue-50/60 border-blue-100" },
+  { icon: Rocket, title: "MVP Development", description: "MVP development for startups that helps you validate ideas quickly and get to market faster with lean, focused builds.", href: "/services#mvp",bg:"bg-purple-50/60 border-purple-100" },
+  { icon: Settings, title: "Internal Tools", description: "Internal tools for businesses that automate workflows, boost productivity, and streamline operations.", href: "/services#internal-tools", bg:"bg-teal-50/60 border-teal-100" },
+  { icon: Bug, title: "Bug Fixes", description: "Expert debugging and issue resolution to get your software running smoothly and reliably again.", href: "/services#bug-fixes",bg:"bg-orange-50/60 border-orange-100" },
+  { icon: Zap, title: "Website Optimization", description: "Website optimization services that improve performance, SEO rankings, and user engagement metrics.", href: "/services#optimization",bg:"bg-indigo-50/60 border-indigo-100" },
 ];
 
 const ServicesOverview = () => {
@@ -69,7 +69,10 @@ const ServicesOverview = () => {
             <Link
               key={service.title}
               to={service.href}
-              className="group p-5 sm:p-6 md:p-7 rounded-2xl bg-white border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              className={`group p-5 sm:p-6 md:p-7 rounded-2xl 
+            border transition-all duration-300 
+            hover:shadow-xl hover:-translate-y-1
+            flex flex-col h-full ${service.bg}`}
             >
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4 sm:mb-5">
                 <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
