@@ -1,93 +1,13 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Clock, User } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { blogPosts } from "@/data/blogPosts";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const blogPosts = [
-  {
-    id: "001",
-    title: "The Complete Guide to MVP Development for Startups",
-    category: "Startup Development / Product Strategy",
-    author: "A4 Technologies Team",
-    readTime: "6 mins",
-    date: "2026-02-10",
-    excerpt: "An MVP is the simplest version of your product that solves a core problem and can be released to real users.",
-    content: "...",
-    seo: {
-      metaTitle: "MVP Development Guide for Startups | A4 Technologies",
-      metaDescription: "Learn what an MVP is, why startups need it, and how to build one effectively to validate your business idea."
-    }
-  },
-  {
-    id: "002",
-    title: "React vs Next.js: Which Framework Should You Choose?",
-    category: "Web Development",
-    author: "A4 Technologies Team",
-    readTime: "5 mins",
-    date: "2026-02-13",
-    excerpt: "Compare React and Next.js to see which framework fits your project needs best.",
-    content: "...",
-    seo: {
-      metaTitle: "React vs Next.js | A4 Technologies",
-      metaDescription: "Compare React and Next.js to choose the best framework for your project. Learn when to use each and their advantages for performance and SEO."
-    }
-  },
-  {
-    id: "choosing-web-development-agency",
-    title: "How to Choose the Right Web Development Company for Your Project",
-    category: "Industry Insights",
-    author: "A4 Team",
-    readTime: "7 min read",
-    date: "Jan 5, 2024",
-    excerpt: "A comprehensive guide to evaluating software development agencies and finding the perfect partner for your business."
-  },
-  {
-    id: "003",
-    title: "10 Website Optimization Techniques That Actually Work",
-    category: "Performance & SEO",
-    author: "A4 Technologies Team",
-    readTime: "4 mins",
-    date: "2026-02-17",
-    excerpt: "Boost website speed, SEO, and conversions with these 10 practical optimization techniques.",
-    content: "...",
-    seo: {
-      metaTitle: "Website Optimization Techniques | A4 Technologies",
-      metaDescription: "Learn 10 practical website optimization techniques to improve speed, SEO, and conversions for your business."
-    }
-  },
-  {
-    id: "004",
-    title: "How Business Automation Saves Time and Reduces Costs",
-    category: "Automation & Digital Transformation",
-    author: "A4 Technologies Team",
-    readTime: "5 mins",
-    date: "2026-02-20",
-    excerpt: "Discover how automating repetitive tasks reduces costs, errors, and saves time.",
-    content: "...",
-    seo: {
-      metaTitle: "Business Automation Benefits | A4 Technologies",
-      metaDescription: "Learn how business automation saves time, reduces costs, and improves efficiency through real-world examples."
-    }
-  },
-  {
-    id: "005",
-    title: "Custom Software vs Off-the-Shelf Tools: What’s Best for Your Business?",
-    category: "Business Technology",
-    author: "A4 Technologies Team",
-    readTime: "4 mins",
-    date: "2026-02-24",
-    excerpt: "Compare custom software and off-the-shelf tools to decide what works best for your business.",
-    content: "...",
-    seo: {
-      metaTitle: "Custom vs Off-the-Shelf Software | A4 Technologies",
-      metaDescription: "Learn the pros and cons of custom software versus off-the-shelf tools to determine the best solution for your business."
-    }
-  }
-];
 
 const Blog = () => {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -135,45 +55,63 @@ const Blog = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {blogPosts.map((post) => (
-              <article
+              <Link
                 key={post.id}
-                className="group rounded-2xl bg-white border border-slate-200 overflow-hidden hover:border-blue-400 hover:shadow-lg transition-all duration-300 opacity-0"
+                to={`/blog/${post.id}`}
+                className="block opacity-0"
               >
-                {/* Category Badge */}
-                <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">{post.category}</span>
-                </div>
-
-                <div className="p-6 flex flex-col justify-between h-full">
-                  <div>
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                        {post.category}
-                      </span>
-                      <span className="text-muted-foreground text-xs">{post.date}</span>
-                    </div>
-
-                    <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                      {post.title}
-                    </h2>
-
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
+                <article className="group rounded-2xl bg-white border border-slate-200 overflow-hidden hover:border-blue-400 hover:shadow-lg transition-all duration-300 h-full">
+                  {/* Card Image - Shows thumbnail/featuredImage if available, otherwise blue gradient placeholder */}
+                  <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center border-b border-slate-100 overflow-hidden">
+                    {post.thumbnail || post.featuredImage ? (
+                      <img
+                        src={post.thumbnail || post.featuredImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                          <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <span className="text-xs text-muted-foreground font-medium">{post.category}</span>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <div className="flex items-center gap-2 text-muted-foreground text-xs">
-                      <User size={14} />
-                      <span>{post.author}</span>
+                  <div className="p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-4 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                          {post.category}
+                        </span>
+                        <span className="text-muted-foreground text-xs">{post.date}</span>
+                      </div>
+
+                      <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                        {post.title}
+                      </h2>
+
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground text-xs">
-                      <Clock size={14} />
-                      <span>{post.readTime}</span>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                      <div className="flex items-center gap-2 text-muted-foreground text-xs">
+                        <Clock size={14} />
+                        <span>{post.readTime}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-primary text-xs font-semibold group-hover:gap-2 transition-all">
+                        <span>Read More</span>
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
