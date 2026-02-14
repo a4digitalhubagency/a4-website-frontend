@@ -6,12 +6,12 @@ import gsap from "gsap";
 
 const Hero = () => {
     const heroRef = useRef<HTMLElement>(null);
-    // const headlineRef = useRef<HTMLHeadingElement>(null);
     const subheadRef = useRef<HTMLParagraphElement>(null);
     const badgeRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
     const techRef = useRef<HTMLDivElement>(null);
     const blobsRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -50,10 +50,16 @@ const Hero = () => {
                     "-=0.3"
                 )
                 .fromTo(
+                    imageRef.current,
+                    { opacity: 0, x: 50, scale: 0.9 },
+                    { opacity: 1, x: 0, scale: 1, duration: 1, ease: "power2.out" },
+                    "-=0.8"
+                )
+                .fromTo(
                     techRef.current,
                     { opacity: 0, y: 20 },
                     { opacity: 1, y: 0, duration: 0.6 },
-                    "-=0.2"
+                    "-=0.4"
                 );
 
             // CTA hover effect
@@ -73,7 +79,7 @@ const Hero = () => {
     return (
         <section
             ref={heroRef}
-            className="relative min-h-screen lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white pt-20 md:pt-0"
+            className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white"
         >
             {/* Background Blobs */}
             <div ref={blobsRef} className="absolute inset-0">
@@ -86,103 +92,109 @@ const Hero = () => {
             {/* Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[length:40px_40px] md:bg-[length:60px_60px]" />
 
-            <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-                <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
-                    {/* Badge */}
-                    <div
-                        ref={badgeRef}
-                        className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-200 mb-4 sm:mb-6 opacity-0 text-xs sm:text-sm mt-8 md:mt-12"
-                    >
-                        <Sparkles size={14} className="text-blue-600 flex-shrink-0" />
-                        <span className="font-medium text-blue-700">
-                            Trusted by 50+ Companies Worldwide
-                        </span>
-                    </div>
+            <div className="container mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-24 md:py-32 lg:py-20">
+                {/* Main Hero Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-center">
+                    {/* Left — Text Content */}
+                    <div className="text-center lg:text-left">
+                        {/* Badge */}
+                        <div
+                            ref={badgeRef}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-200 opacity-0 text-xs sm:text-sm mb-6 lg:mb-8"
+                        >
+                            <Sparkles size={14} className="text-blue-600 flex-shrink-0" />
+                            <span className="font-medium text-blue-700">
+                                Trusted by 50+ Companies Worldwide
+                            </span>
+                        </div>
 
-                    {/* Headline */}
-                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-foreground leading-tight md:leading-tight lg:leading-tight mb-4 sm:mb-6 text-balance">
-                        We Build Software That{" "}
-                        <span className="text-blue-700">Drives Growth</span>
-                    </h1>
+                        {/* Headline */}
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-foreground leading-[1.15] tracking-tight mb-5 md:mb-6 text-balance">
+                            We Build Software That{" "}
+                            <span className="text-blue-700">Drives Growth</span>
+                        </h1>
 
-                    {/* Subheadline */}
-                    <p
-                        ref={subheadRef}
-                        className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 max-w-xl sm:max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-10 leading-relaxed opacity-0"
-                    >
-                        A4 Technologies is a premier software development agency specializing in web applications, MVPs for startups, internal tools, and website optimization that scales with your business.
-                    </p>
-
-                    {/* CTA Buttons */}
-                    <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center opacity-0">
-                        <Link to="/contact" className="w-full sm:w-auto">
-                            <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-                                Get Free Consultation
-                                <ArrowRight
-                                    size={18}
-                                    className="transition-transform group-hover:translate-x-1"
-                                />
-                            </Button>
-                        </Link>
-                        <Link to="/case-studies" className="w-full sm:w-auto">
-                            <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
-                                View Our Work
-                            </Button>
-                        </Link>
-                    </div>
-
-                    {/* Technologies Marquee */}
-                    <div
-                        ref={techRef}
-                        className="mt-8 sm:mt-12 md:mt-16 pt-4 sm:pt-8 md:pt-16 border-t border-slate-200 opacity-0"
-                    >
-                        <p className="text-xs sm:text-sm md:text-base text-slate-500 mb-4 sm:mb-6 md:mb-8 font-semibold uppercase tracking-wider">
-                            Technologies We Excel In
+                        {/* Subheadline */}
+                        <p
+                            ref={subheadRef}
+                            className="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8 md:mb-10 opacity-0"
+                        >
+                            A premier software development agency specializing in web applications, MVPs for startups, internal tools, and website optimization that scales with your business.
                         </p>
-                        <div className="relative overflow-hidden">
-                            <div className="flex animate-marquee hover:pause-animation">
-                                {/* First set of logos */}
-                                <div className="flex items-center gap-8 sm:gap-12 md:gap-16 px-4 flex-shrink-0">
-                                    {/* React */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
 
-                                    {/* Next.js */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                        {/* CTA Buttons */}
+                        <div
+                            ref={ctaRef}
+                            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start opacity-0"
+                        >
+                            <Link to="/contact" className="w-full sm:w-auto">
+                                <Button variant="hero" size="xl" className="w-full sm:w-auto group">
+                                    Get Free Consultation
+                                    <ArrowRight
+                                        size={18}
+                                        className="transition-transform group-hover:translate-x-1"
+                                    />
+                                </Button>
+                            </Link>
+                            <Link to="/case-studies" className="w-full sm:w-auto">
+                                <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
+                                    View Our Work
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
 
-                                    {/* TypeScript */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                    {/* Right — Hero Image */}
+                    <div
+                        ref={imageRef}
+                        className="hidden lg:flex justify-center items-center opacity-0"
+                    >
+                        <div className="relative">
+                            {/* Decorative glow behind image */}
+                            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 via-blue-400/10 to-indigo-500/20 rounded-3xl blur-2xl" />
+                            <img
+                                src="/images/a4hero.webp"
+                                alt="A4 Technologies team collaborating on software development"
+                                className="relative w-full max-w-lg xl:max-w-xl rounded-2xl shadow-xl ring-1 ring-black/5 object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
 
-                                    {/* NestJS */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                {/* Technologies Marquee */}
+                <div
+                    ref={techRef}
+                    className="mt-16 md:mt-20 lg:mt-24 pt-8 md:pt-10 border-t border-slate-200/80 opacity-0 text-center"
+                >
+                    <p className="text-xs sm:text-sm text-slate-400 mb-6 md:mb-8 font-semibold uppercase tracking-widest">
+                        Technologies We Excel In
+                    </p>
+                    <div className="relative overflow-hidden">
+                        <div className="flex animate-marquee hover:pause-animation">
+                            {/* First set of logos */}
+                            <div className="flex items-center gap-10 sm:gap-12 md:gap-16 px-4 flex-shrink-0">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300 invert" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                            </div>
 
-                                    {/* MongoDB */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-
-                                    {/* Express */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity invert" />
-
-                                    {/* Supabase */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-
-                                    {/* Python */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-
-                                    {/* Node.js */}
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                </div>
-
-                                {/* Duplicate set for seamless loop */}
-                                <div className="flex items-center gap-8 sm:gap-12 md:gap-16 px-4 flex-shrink-0">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity invert" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                                </div>
+                            {/* Duplicate set for seamless loop */}
+                            <div className="flex items-center gap-10 sm:gap-12 md:gap-16 px-4 flex-shrink-0">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300 invert" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-8 sm:h-10 md:h-12 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300" />
                             </div>
                         </div>
                     </div>
