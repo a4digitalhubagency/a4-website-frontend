@@ -53,6 +53,23 @@ const caseStudies = [
     technologies: ["TypeScript", "Express", "MongoDB", "Redis"],
     image: "/placeholder.svg",
   },
+  
+    {
+  id: "hairbybash-website",
+  title: "HairByBash Salon Website",
+  client: "HairByBash",
+  category: "Business Website",
+  description:
+    "Designed and developed a modern, elegant website for a hair brand, focusing on visual storytelling, service presentation, and seamless booking experience.",
+  results: [
+    "Premium brand presentation",
+    "Improved client engagement",
+    "Mobile-first responsive design"
+  ],
+  technologies: ["Next.Js", "Tailwind CSS", "GSAP"],
+  image: "/images/hairbybash.jpg",
+},
+  
 ];
 
 const CaseStudies = () => {
