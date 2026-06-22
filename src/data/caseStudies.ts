@@ -1,4 +1,6 @@
 import HairbybashImage from "../assets/images/Hairbybash landingpage.png";
+import EeshaLuxeImage from "../assets/images/Eesha luxe landingpage.png";
+import MalensImage from "../assets/images/Malens medcare landingpage.png";
 
 export interface CaseStudy {
   id: string;
@@ -49,6 +51,69 @@ export const caseStudies: CaseStudy[] = [
       "Before this, I was answering DMs at midnight trying to manage my schedule. Now my clients book themselves, pay their deposit, and I wake up to a full calendar. It changed how I run my business.",
     image: HairbybashImage,
     link: "https://www.hairbybash.ca/",
+  },
+  {
+    id: "eesha-luxe-ecommerce",
+    title: "Eesha Luxe — Fashion E-commerce Store",
+    client: "Eesha Luxe",
+    category: "E-commerce",
+    industry: "E-commerce / Retail",
+    description:
+      "Eesha Luxe is a modern fashion brand selling curated bags, clothing, and accessories. A4 Technologies designed and built a fully responsive e-commerce storefront with a sleek, editorial aesthetic — giving the brand a premium digital presence that reflects the quality of its products and converts visitors into loyal customers.",
+    challenge:
+      "Eesha Luxe had a strong product offering but no dedicated online store to match. Sales were fragmented, the brand lacked a cohesive digital identity, and there was no way to showcase collections, manage inventory, or process orders at scale. The business needed a storefront that felt as premium as the products it sold.",
+    solution:
+      "A4 Technologies built a fully custom e-commerce platform with a visually striking design, intuitive product browsing by collection, seamless checkout, and a mobile-first experience. The site captures the brand's fashion-forward identity while giving the owner full control over inventory, orders, and customer data — all from a clean admin interface.",
+    results: [
+      "Launched a fully branded online storefront from scratch",
+      "Mobile-first design optimised for fashion shoppers",
+      "Streamlined checkout flow reducing cart abandonment",
+      "Collections-based browsing increasing product discovery",
+      "Owner-managed inventory with zero technical overhead",
+    ],
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Stripe Payments",
+      "Sanity CMS",
+      "Vercel",
+      "Responsive UI/UX",
+    ],
+    testimonialPrompt:
+      "Having a proper store that actually looks like our brand made such a difference. Customers take us seriously now — and the sales reflect that.",
+    image: EeshaLuxeImage,
+    link: "https://eesha-luxe.vercel.app",
+  },
+  {
+    id: "malens-medcare-platform",
+    title: "Malens Medcare — Diagnostics Web Platform",
+    client: "Malens Medcare Limited",
+    category: "Web Development",
+    industry: "Healthcare",
+    description:
+      "Malens Medcare Limited is an MLSCN-certified diagnostic laboratory with 3 branches across Ikorodu, Ebute, and Agric in Lagos. A4 Technologies built a professional web platform that communicates the brand's clinical credibility, enables next-day appointment booking, and gives patients access to their results online — bringing a trusted local institution into the digital age.",
+    challenge:
+      "Despite being a well-established diagnostics provider trusted by thousands of Lagos residents, Malens had no digital presence to match their reputation. Patients had no way to book appointments online, access test results, or verify the clinic's certifications — limiting reach and forcing staff to manage bookings manually across phone calls and walk-ins.",
+    solution:
+      "A4 Technologies designed and developed a clean, trust-forward web platform that reflects Malens' medical professionalism. The site features a next-day booking system, a secure results portal for patients, a services directory, and clear communication of their MLSCN certification and branch locations — making it easy for new and returning patients to engage with the clinic confidently.",
+    results: [
+      "Online appointment booking across all 3 Lagos branches",
+      "Patient results portal reducing front-desk enquiries",
+      "MLSCN certification and credibility prominently communicated",
+      "Mobile-optimised experience for Lagos smartphone users",
+      "Increased discoverability for patients searching locally",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Vercel",
+      "Responsive UI/UX",
+    ],
+    testimonialPrompt:
+      "Our patients can now book appointments and check their results without calling us. It's made our operations smoother and our brand look as professional as the service we provide.",
+    image: MalensImage,
+    link: "https://malens-medacre.vercel.app",
   },
   {
     id: "fintech-dashboard",
